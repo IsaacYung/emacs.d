@@ -32,3 +32,20 @@
   (spacemacs/setup-startup-hook)
   (require 'server)
   (unless (server-running-p) (server-start)))
+
+;; Custom configs
+;;
+;; Author: Isaac Yung Lopes <isaaczoi@gmail.com>
+;; URL: https://github.com/IsaacYung/emacs.d
+(require 'cask "~/.emacs.d/.cask/24.5/elpa/cask-20161024.1205/cask.el")
+(cask-initialize)
+(require 'pallet)
+(add-to-list 'load-path "~/.emacs.d/ruby")
+(add-to-list 'load-path "~/.emacs.d/elixir")
+(add-to-list 'load-path "~/.emacs.d/setup")
+
+(load "common-setup.el")
+(load "01ruby.el")
+(load "02org.el")
+(load "03auto-complete.el")
+(load "04web-mode.el")
